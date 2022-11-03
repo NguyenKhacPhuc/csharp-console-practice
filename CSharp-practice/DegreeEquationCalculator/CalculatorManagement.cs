@@ -1,15 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using DegreeEquationResolver;
-
-using System;
-
-namespace DegreeEquationResolver
+﻿namespace CSharp_practice.DegreeEquationCalculator
 {
-    class Program
+    internal class CalculatorManagement
     {
-        private const float NO_RESULT = -1f;
-        static void Main(string[] args)
+        public void Execute()
         {
             var equationElements = getUserInput();
             Console.WriteLine(equationElements);
@@ -24,7 +17,7 @@ namespace DegreeEquationResolver
             }
         }
 
-        static EquationElements getUserInput()
+        private EquationElements getUserInput()
         {
             Console.WriteLine("Please enter a: ");
             double numberA = Convert.ToDouble(Console.ReadLine());
@@ -36,7 +29,7 @@ namespace DegreeEquationResolver
             return new EquationElements(numberA, numberB, numberC);
         }
 
-        static EquationResult? caculatedEquation(EquationElements equationElements)
+        private EquationResult? caculatedEquation(EquationElements equationElements)
         {
             double numberA = equationElements.NumberA;
             double numberB = equationElements.NumberB;
@@ -57,11 +50,11 @@ namespace DegreeEquationResolver
 
                 if (delta > 0)
                 {
-                    return new EquationResult(((-numberB + Math.Sqrt(delta)) / (2 * numberA)), ((-numberB - Math.Sqrt(delta)) / (2 * numberA)));
+                    return new EquationResult((-numberB + Math.Sqrt(delta)) / (2 * numberA), (-numberB - Math.Sqrt(delta)) / (2 * numberA));
                 }
                 else if (delta == 0)
                 {
-                    return new EquationResult((-numberB / (2 * numberA)));
+                    return new EquationResult(-numberB / (2 * numberA));
                 }
                 else
                 {
@@ -71,8 +64,3 @@ namespace DegreeEquationResolver
         }
     }
 }
-
-
-
-
-

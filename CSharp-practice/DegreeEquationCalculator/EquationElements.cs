@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DegreeEquationResolver
+﻿namespace CSharp_practice.DegreeEquationCalculator
 {
     internal class EquationElements
     {
-        private  double numberA = 0;
-        private  double numberB = 0;
-        private  double numberC = 0;
+        private double numberA = 0;
+        private double numberB = 0;
+        private double numberC = 0;
         public EquationElements(double numberA, double numberB, double numberC)
         {
             this.numberA = numberA;
@@ -25,7 +19,7 @@ namespace DegreeEquationResolver
         }
         public double NumberB
         {
-            get { return numberB; } 
+            get { return numberB; }
             set { numberB = value; }
         }
         public double NumberC
@@ -36,7 +30,7 @@ namespace DegreeEquationResolver
 
     }
 
-    internal class EquationResult 
+    internal class EquationResult
     {
         private readonly double result1;
         private readonly double result2;
